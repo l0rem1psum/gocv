@@ -28,3 +28,15 @@ func toRectangles(ret C.Rects) []image.Rectangle {
 	}
 	return rects
 }
+
+func Split(src GpuMat) (mv []GpuMat) {
+	cGpuMats := C.struct_GpuMats{}
+	C.GpuMat_Split(src.p, &(cGpuMats), nil)
+	defer C.GpuMats_Close(cGpuMats)
+	mv = make([]GpuMat, cGpuMats.length)
+	for i := C.int(0); i < cGpuMats.length; i++ {
+		mv[i].p = C.GpuMats_get(cGpuMats, i)
+	}
+	return
+}
+
