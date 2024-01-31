@@ -11,7 +11,11 @@ package cuda
 #include "cuda.h"
 */
 import "C"
-import "gocv.io/x/gocv"
+import (
+	"unsafe"
+
+	"gocv.io/x/gocv"
+)
 
 // GpuMat is the GPU version of a Mat
 //
@@ -227,3 +231,8 @@ func (s *Stream) QueryIfComplete() bool {
 func (s *Stream) WaitForCompletion() {
 	C.Stream_WaitForCompletion(s.p)
 }
+
+func (s *Stream) CudaPtr() unsafe.Pointer {
+	return unsafe.Pointer(C.Stream_CudaPtr(s.p))
+}
+

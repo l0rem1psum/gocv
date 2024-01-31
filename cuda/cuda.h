@@ -44,6 +44,7 @@ Stream Stream_New();
 void Stream_Close(Stream s);
 bool Stream_QueryIfComplete(Stream s);
 void Stream_WaitForCompletion(Stream s);
+void *Stream_CudaPtr(Stream s);
 
 #ifdef __cplusplus
 }

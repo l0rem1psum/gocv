@@ -111,3 +111,7 @@ bool Stream_QueryIfComplete(Stream s) {
 void Stream_WaitForCompletion(Stream s) {
     s->waitForCompletion();
 }
+
+void *Stream_CudaPtr(Stream s) {
+    return s->cudaPtr();
+}
