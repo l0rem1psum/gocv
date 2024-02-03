@@ -15,6 +15,10 @@ void CvtColor(Mat src, Mat dst, int code) {
     cv::cvtColor(*src, *dst, code);
 }
 
+void CvtColorTwoPlane(Mat src1, Mat src2, Mat dst, int code) {
+    cv::cvtColorTwoPlane(*src1, *src2, *dst, code);
+}
+
 void Demosaicing(Mat src, Mat dst, int code) {
     cv::demosaicing(*src, *dst, code);
 }

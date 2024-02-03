@@ -57,6 +57,10 @@ func CvtColor(src Mat, dst *Mat, code ColorConversionCode) {
 	C.CvtColor(src.p, dst.p, C.int(code))
 }
 
+func CvtColorTwoPlane(src1, src2 Mat, dst *Mat, code ColorConversionCode) {
+	C.CvtColorTwoPlane(src1.p, src2.p, dst.p, C.int(code))
+}
+
 // Demosaicing converts an image from Bayer pattern to RGB or grayscale.
 // It converts the src Mat image to the dst Mat using the
 // code param containing the desired ColorConversionCode color space.
