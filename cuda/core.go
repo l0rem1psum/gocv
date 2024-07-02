@@ -43,4 +43,3 @@ func Split(src GpuMat) (mv []GpuMat) {
 func (m *GpuMat) Ptr() C.GpuMat {
 	return m.p
 }
-

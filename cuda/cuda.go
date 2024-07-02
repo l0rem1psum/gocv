@@ -182,6 +182,10 @@ func (m *GpuMat) Cols() int {
 	return int(C.GpuMat_Cols(m.p))
 }
 
+func (m *GpuMat) Step() int {
+	return int(C.GpuMat_Step(m.p))
+}
+
 // Channels returns the number of channels for this GpuMat.
 func (m *GpuMat) Channels() int {
 	return int(C.GpuMat_Channels(m.p))
@@ -190,6 +194,10 @@ func (m *GpuMat) Channels() int {
 // Type returns the type for this GpuMat.
 func (m *GpuMat) Type() gocv.MatType {
 	return gocv.MatType(C.GpuMat_Type(m.p))
+}
+
+func (m *GpuMat) DataPtr() unsafe.Pointer {
+	return unsafe.Pointer(C.GpuMat_Data(m.p))
 }
 
 // Reshape creates a new GpuMat with the same data

@@ -31,8 +31,10 @@ void GpuMat_CopyTo(GpuMat m, GpuMat dst, Stream s);
 GpuMat GpuMat_Reshape(GpuMat m, int cn, int rows);
 int GpuMat_Cols(GpuMat m);
 int GpuMat_Rows(GpuMat m);
+int GpuMat_Step(GpuMat m);
 int GpuMat_Channels(GpuMat m);
 int GpuMat_Type(GpuMat m);
+uint8_t *GpuMat_Data(GpuMat m);
 
 void PrintCudaDeviceInfo(int device);
 void PrintShortCudaDeviceInfo(int device);

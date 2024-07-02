@@ -92,12 +92,20 @@ int GpuMat_Rows(GpuMat m) {
     return m->rows;
 }
 
+int GpuMat_Step(GpuMat m) {
+    return m->step;
+}
+
 int GpuMat_Channels(GpuMat m) {
     return m->channels();
 }
 
 int GpuMat_Type(GpuMat m) {
     return m->type();
+}
+
+uint8_t *GpuMat_Data(GpuMat m) {
+    return m->data;
 }
 
 Stream Stream_New() {
